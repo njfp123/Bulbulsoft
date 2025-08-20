@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulbulsoft - Organic Baby Clothing</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#" class="logo">bulbulsoft</a>
+            <nav>
+                <a href="#products">Shop</a>
+                <a href="#about">Our Story</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Gentle on Skin, Kind to Earth.</h1>
+                <p>Simple, innovative, and oh-so-soft organic wear for your little one.</p>
+                <a href="#products" class="cta-button">Explore Collection</a>
+            </div>
+        </section>
+
+        <section id="about" class="about">
+            <div class="container">
+                <h2>Why Choose Bulbulsoft?</h2>
+                <div class="features-grid">
+                    <div class="feature">
+                        <h3>🌱 Organic Quality</h3>
+                        <p>Made from 100% GOTS-certified organic cotton for ultimate purity.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>☁️ Unmatched Comfort</h3>
+                        <p>Simple, tagless designs that are buttery soft and perfect for sensitive skin.</p>
+                    </div>
+                    <div class="feature">
+                        <h3>💡 Innovative & Multi-Use</h3>
+                        <p>Thoughtfully designed pieces that grow with your baby and serve multiple purposes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="container">
+                <h2>Our Collection</h2>
+                <div class="product-grid">
+
+                    <div class="product-card">
+                        <img src="images/product1.jpg" alt="The Cloud Onesie">
+                        <h3 class="product-name">The Cloud Onesie</h3>
+                        <p class="product-price">$25.00</p>
+                        <div class="product-options">
+                            <label for="size1">Size:</label>
+                            <select id="size1" class="product-size">
+                                <option>Newborn</option>
+                                <option>0-3 Months</option>
+                                <option>3-6 Months</option>
+                                <option>6-12 Months</option>
+                            </select>
+                        </div>
+                        <button class="buy-button">Order Now</button>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/product2.jpg" alt="The Dreamer Swaddle">
+                        <h3 class="product-name">The Dreamer Swaddle</h3>
+                        <p class="product-price">$30.00</p>
+                        <div class="product-options">
+                            <label for="size2">Size:</label>
+                            <select id="size2" class="product-size">
+                                <option>One Size (47"x47")</option>
+                            </select>
+                        </div>
+                        <button class="buy-button">Order Now</button>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="images/product3.jpg" alt="Everyday Leggings">
+                        <h3 class="product-name">Everyday Leggings</h3>
+                        <p class="product-price">$18.00</p>
+                        <div class="product-options">
+                            <label for="size3">Size:</label>
+                            <select id="size3" class="product-size">
+                                <option>0-3 Months</option>
+                                <option>3-6 Months</option>
+                                <option>6-12 Months</option>
+                            </select>
+                        </div>
+                        <button class="buy-button">Order Now</button>
+                    </div>
+                     </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container">
+            <p>&copy; 2025 bulbulsoft. All rights reserved.</p>
+            <p>Softness delivered with love.</p>
+        </div>
+    </footer>
+
+    <div id="order-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Complete Your Order</h2>
+            <p>To finalize your order, please provide your details below. No payment is required now. We will contact you to confirm.</p>
+            
+            <form name="order" method="POST" data-netlify="true">
+                <input type="hidden" name="product-name" id="modal-product-name">
+                <input type="hidden" name="product-size" id="modal-product-size">
+                <input type="hidden" name="product-price" id="modal-product-price">
+
+                <div class="order-summary">
+                    <strong>Product:</strong> <span id="summary-product-name"></span><br>
+                    <strong>Size:</strong> <span id="summary-product-size"></span><br>
+                    <strong>Price:</strong> <span id="summary-product-price"></span>
+                </div>
+
+                <input type="text" name="name" placeholder="Full Name" autocomplete="name" required>
+                <input type="email" name="email" placeholder="Email Address" autocomplete="email" required>
+                <input type="tel" name="phone" placeholder="Phone Number (for confirmation)" autocomplete="tel" required>
+                <textarea name="address" placeholder="Full Shipping Address" autocomplete="street-address" rows="4" required></textarea>
+                
+                <button type="submit">Send Order Request via Email</button>
+            </form>
+            <button id="whatsapp-button">Send Order via WhatsApp</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

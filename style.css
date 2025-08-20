@@ -1,0 +1,306 @@
+:root {
+    --primary-color: #8ab0ab; /* Soft teal */
+    --secondary-color: #fdf6e6; /* Creamy beige */
+    --text-color: #5d5d5d; /* Dark grey */
+    --white-color: #ffffff;
+    --heading-font: 'Poppins', sans-serif;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    background-color: var(--white-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background: var(--white-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--secondary-color);
+    text-align: center;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background: var(--primary-color);
+    color: var(--white-color);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #749c97;
+}
+
+/* About/Features Section */
+.about, .products {
+    padding: 80px 0;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--text-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Product Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.product-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 1.4rem;
+    margin: 15px 0 5px 0;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.product-options {
+    margin-bottom: 20px;
+}
+
+.product-options select {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.buy-button {
+    background: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 12px 25px;
+    width: calc(100% - 40px);
+    margin: 0 20px 20px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #749c97;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-color);
+    color: var(--white-color);
+    text-align: center;
+    padding: 30px 0;
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 200;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    background: var(--white-color);
+    padding: 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    text-align: left;
+    font-size: 1.8rem;
+}
+
+.modal-content p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.order-summary {
+    background: var(--secondary-color);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.modal-content form input,
+.modal-content form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Important */
+}
+
+.modal-content form button,
+.modal-content #whatsapp-button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-content form button {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+.modal-content form button:hover {
+    background-color: #749c97;
+}
+
+#whatsapp-button {
+    background: #25D366;
+    color: var(--white-color);
+    margin-top: 10px;
+}
+#whatsapp-button:hover {
+    background-color: #1EBE57;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    nav {
+        display: none; /* Simple hiding for mobile, can be improved with a burger menu */
+    }
+}
